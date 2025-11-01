@@ -7,6 +7,7 @@
     <meta name="keywords" content="image converter, jpg to png, png to jpg, webp converter, image to pdf, AdvadApp">
     <title>AdvadApp - Free Online Image Converter | JPG, PNG, WEBP, PDF</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80' fill='%23FF0066'>A</text></svg>">
+    <link rel="alternate" type="application/rss+xml" title="AdvadApp RSS Feed" href="https://advadapp.shop/rss.xml">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -167,29 +168,12 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
-        .share-btn.whatsapp {
-            background: #25D366;
-        }
-
-        .share-btn.facebook {
-            background: #1877F2;
-        }
-
-        .share-btn.linkedin {
-            background: #0A66C2;
-        }
-
-        .share-btn.twitter {
-            background: #1DA1F2;
-        }
-
-        .share-btn.telegram {
-            background: #0088cc;
-        }
-
-        .share-btn.reddit {
-            background: #FF4500;
-        }
+        .share-btn.whatsapp { background: #25D366; }
+        .share-btn.facebook { background: #1877F2; }
+        .share-btn.linkedin { background: #0A66C2; }
+        .share-btn.twitter { background: #1DA1F2; }
+        .share-btn.telegram { background: #0088cc; }
+        .share-btn.reddit { background: #FF4500; }
 
         .converter-container {
             background: white;
@@ -544,12 +528,12 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo-container">
+            <a href="/" class="logo-container">
                 <div class="logo-text">ADVADAPP</div>
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#converter">Converter</a></li>
                     <li><a href="#features">Features</a></li>
                 </ul>
@@ -627,6 +611,30 @@
             <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
         </div>
 
+        <section class="share-section">
+            <h3 class="share-title">📢 Share AdvadApp with Friends!</h3>
+            <div class="share-buttons">
+                <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20free%20image%20converter!%20https://advadapp.shop" target="_blank" class="share-btn whatsapp">
+                    <span>📱</span> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://advadapp.shop" target="_blank" class="share-btn facebook">
+                    <span>👥</span> Facebook
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://advadapp.shop" target="_blank" class="share-btn linkedin">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https://advadapp.shop&text=Check%20out%20this%20free%20image%20converter!" target="_blank" class="share-btn twitter">
+                    <span>🐦</span> Twitter
+                </a>
+                <a href="https://telegram.me/share/url?url=https://advadapp.shop&text=Check%20out%20this%20free%20image%20converter!" target="_blank" class="share-btn telegram">
+                    <span>✈️</span> Telegram
+                </a>
+                <a href="https://reddit.com/submit?url=https://advadapp.shop&title=Free%20Online%20Image%20Converter" target="_blank" class="share-btn reddit">
+                    <span>🤖</span> Reddit
+                </a>
+            </div>
+        </section>
+
         <section class="features-section" id="features">
             <h2 class="section-title">Why Choose AdvadApp?</h2>
             <p class="section-subtitle">The most powerful image converter available online</p>
@@ -700,7 +708,7 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="#converter">Image Converter</a></li>
                         <li><a href="#features">Features</a></li>
                     </ul>
@@ -708,8 +716,8 @@
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html" target="_blank">Terms and Conditions</a></li>
+                        <li><a href="/privacy-policy" target="_blank">Privacy Policy</a></li>
+                        <li><a href="/terms-and-conditions" target="_blank">Terms and Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -824,82 +832,4 @@
             }
         }
 
-        function convertToImage() {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-
-                    const ctx = canvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0);
-
-                    const mimeType = `image/${selectedFormat === 'jpg' ? 'jpeg' : selectedFormat}`;
-                    const quality = selectedFormat === 'jpg' ? 0.95 : undefined;
-
-                    canvas.toBlob((blob) => {
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        const originalName = currentFile.name.split('.').slice(0, -1).join('.');
-                        a.download = `${originalName || 'converted'}.${selectedFormat}`;
-                        document.body.appendChild(a);
-                        a.click();
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
-                        resolve();
-                    }, mimeType, quality);
-                };
-                img.src = previewImage.src;
-            });
-        }
-
-        async function convertToPDF() {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => {
-                    const { jsPDF } = window.jspdf;
-                    
-                    const imgWidth = img.width;
-                    const imgHeight = img.height;
-                    const ratio = imgWidth / imgHeight;
-
-                    let pdfWidth = 210;
-                    let pdfHeight = pdfWidth / ratio;
-
-                    if (pdfHeight > 297) {
-                        pdfHeight = 297;
-                        pdfWidth = pdfHeight * ratio;
-                    }
-
-                    const pdf = new jsPDF({
-                        orientation: ratio > 1 ? 'landscape' : 'portrait',
-                        unit: 'mm',
-                        format: 'a4'
-                    });
-
-                    const x = (pdf.internal.pageSize.getWidth() - pdfWidth) / 2;
-                    const y = (pdf.internal.pageSize.getHeight() - pdfHeight) / 2;
-
-                    pdf.addImage(previewImage.src, 'JPEG', x, y, pdfWidth, pdfHeight);
-                    const originalName = currentFile.name.split('.').slice(0, -1).join('.');
-                    pdf.save(`${originalName || 'converted'}.pdf`);
-                    resolve();
-                };
-                img.src = previewImage.src;
-            });
-        }
-
-        function reset() {
-            currentFile = null;
-            fileInput.value = '';
-            previewSection.classList.remove('active');
-            previewImage.src = '';
-            formatBtns.forEach(b => b.classList.remove('active'));
-            formatBtns[0].classList.add('active');
-            selectedFormat = 'jpg';
-        }
-    </script>
-</body>
-</html>
+        function
