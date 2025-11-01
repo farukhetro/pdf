@@ -125,6 +125,72 @@
             font-weight: 600;
         }
 
+        .share-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .share-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FF0066;
+            margin-bottom: 20px;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn.facebook {
+            background: #1877F2;
+        }
+
+        .share-btn.linkedin {
+            background: #0A66C2;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .share-btn.telegram {
+            background: #0088cc;
+        }
+
+        .share-btn.reddit {
+            background: #FF4500;
+        }
+
         .converter-container {
             background: white;
             border-radius: 20px;
@@ -560,6 +626,30 @@
             </script>
             <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
         </div>
+
+        <section class="share-section">
+            <h3 class="share-title">📢 Share AdvadApp with Friends!</h3>
+            <div class="share-buttons">
+                <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20free%20image%20converter!%20https://advadapp.shop" target="_blank" class="share-btn whatsapp">
+                    <span>📱</span> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://advadapp.shop" target="_blank" class="share-btn facebook">
+                    <span>👥</span> Facebook
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://advadapp.shop" target="_blank" class="share-btn linkedin">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https://advadapp.shop&text=Check%20out%20this%20free%20image%20converter!" target="_blank" class="share-btn twitter">
+                    <span>🐦</span> Twitter
+                </a>
+                <a href="https://telegram.me/share/url?url=https://advadapp.shop&text=Check%20out%20this%20free%20image%20converter!" target="_blank" class="share-btn telegram">
+                    <span>✈️</span> Telegram
+                </a>
+                <a href="https://reddit.com/submit?url=https://advadapp.shop&title=Free%20Online%20Image%20Converter" target="_blank" class="share-btn reddit">
+                    <span>🤖</span> Reddit
+                </a>
+            </div>
+        </section>
 
         <section class="features-section" id="features">
             <h2 class="section-title">Why Choose AdvadApp?</h2>
