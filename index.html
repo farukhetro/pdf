@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AdvadApp - Free online image converter. Convert JPG, PNG, WEBP, and PDF formats instantly. Fast, secure, and no registration required.">
-    <meta name="keywords" content="image converter, jpg to png, png to jpg, webp converter, image to pdf, AdvadApp">
     <title>AdvadApp - Free Online Image Converter | JPG, PNG, WEBP, PDF</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80' fill='%23FF0066'>A</text></svg>">
-    <link rel="alternate" type="application/rss+xml" title="AdvadApp RSS Feed" href="https://advadapp.shop/rss.xml">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,13 +34,6 @@
             align-items: center;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
         .logo-text {
             font-size: 26px;
             font-weight: 800;
@@ -65,19 +55,6 @@
 
         .nav-links a:hover {
             color: #FF0066;
-        }
-
-        .ad-space {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            margin: 20px auto;
-            max-width: 1200px;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .main-wrapper {
@@ -106,74 +83,6 @@
             margin: 0 auto;
             line-height: 1.6;
         }
-
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-            margin-bottom: 30px;
-        }
-
-        .feature-badge {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 8px 18px;
-            border-radius: 25px;
-            color: white;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        .share-section {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .share-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #FF0066;
-            margin-bottom: 20px;
-        }
-
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .share-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .share-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .share-btn.whatsapp { background: #25D366; }
-        .share-btn.facebook { background: #1877F2; }
-        .share-btn.linkedin { background: #0A66C2; }
-        .share-btn.twitter { background: #1DA1F2; }
-        .share-btn.telegram { background: #0088cc; }
-        .share-btn.reddit { background: #FF4500; }
 
         .converter-container {
             background: white;
@@ -399,122 +308,24 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 25px;
-            border-radius: 15px;
-            background: linear-gradient(135deg, #fff5f9 0%, #ffe8f2 100%);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-
-        .feature-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #FF0066;
-            margin-bottom: 8px;
-        }
-
-        .feature-description {
-            color: #666;
-            font-size: 13px;
-            line-height: 1.6;
-        }
-
-        .content-section {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .content-section h2 {
-            font-size: 26px;
-            font-weight: 700;
-            color: #FF0066;
-            margin-bottom: 18px;
-        }
-
-        .content-section p {
-            color: #555;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 14px;
-        }
-
-        footer {
-            background: rgba(255, 0, 102, 0.95);
+        .feature-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 25px;
             color: white;
-            padding: 45px 20px 25px;
-            margin-top: 60px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 35px;
-            margin-bottom: 35px;
-        }
-
-        .footer-section h3 {
-            font-size: 18px;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
             font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 5px;
         }
 
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 13px;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 13px;
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
         }
 
         @media (max-width: 768px) {
@@ -528,12 +339,10 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="/" class="logo-container">
-                <div class="logo-text">ADVADAPP</div>
-            </a>
+            <div class="logo-text">ADVADAPP</div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#converter">Converter</a></li>
                     <li><a href="#features">Features</a></li>
                 </ul>
@@ -541,23 +350,16 @@
         </div>
     </header>
 
-    <div class="ad-space">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '83687ca4a249fadc4214f2cdf1428b24',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
-    </div>
-
     <div class="main-wrapper">
         <section class="hero-section" id="home">
             <h1>Free Online Image Converter</h1>
             <p>Convert your images between JPG, PNG, WEBP, and PDF formats instantly with AdvadApp. Fast, secure, and completely free.</p>
+            <div class="hero-features">
+                <span class="feature-badge">✓ 100% Free</span>
+                <span class="feature-badge">✓ No Registration</span>
+                <span class="feature-badge">✓ Secure & Private</span>
+                <span class="feature-badge">✓ Instant Results</span>
+            </div>
         </section>
 
         <div class="converter-container" id="converter">
@@ -598,134 +400,11 @@
             </div>
         </div>
 
-        <div class="ad-space">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '83687ca4a249fadc4214f2cdf1428b24',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
-        </div>
-
-        <section class="share-section">
-            <h3 class="share-title">📢 Share AdvadApp with Friends!</h3>
-            <div class="share-buttons">
-                <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20amazing%20free%20image%20converter!%20https://advadapp.shop" target="_blank" class="share-btn whatsapp">
-                    <span>📱</span> WhatsApp
-                </a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://advadapp.shop" target="_blank" class="share-btn facebook">
-                    <span>👥</span> Facebook
-                </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://advadapp.shop" target="_blank" class="share-btn linkedin">
-                    <span>💼</span> LinkedIn
-                </a>
-                <a href="https://twitter.com/intent/tweet?url=https://advadapp.shop&text=Check%20out%20this%20free%20image%20converter!" target="_blank" class="share-btn twitter">
-                    <span>🐦</span> Twitter
-                </a>
-                <a href="https://telegram.me/share/url?url=https://advadapp.shop&text=Check%20out%20this%20free%20image%20converter!" target="_blank" class="share-btn telegram">
-                    <span>✈️</span> Telegram
-                </a>
-                <a href="https://reddit.com/submit?url=https://advadapp.shop&title=Free%20Online%20Image%20Converter" target="_blank" class="share-btn reddit">
-                    <span>🤖</span> Reddit
-                </a>
-            </div>
-        </section>
-
         <section class="features-section" id="features">
             <h2 class="section-title">Why Choose AdvadApp?</h2>
             <p class="section-subtitle">The most powerful image converter available online</p>
-            <div class="hero-features">
-                <span class="feature-badge">✓ 100% Free</span>
-                <span class="feature-badge">✓ No Registration</span>
-                <span class="feature-badge">✓ Secure & Private</span>
-                <span class="feature-badge">✓ Instant Results</span>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Lightning Fast</h3>
-                    <p class="feature-description">Convert images in seconds with our optimized conversion engine. No waiting, no delays.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3 class="feature-title">100% Secure</h3>
-                    <p class="feature-description">All conversions happen in your browser. Your images never leave your device.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💯</div>
-                    <h3 class="feature-title">High Quality</h3>
-                    <p class="feature-description">Maintain maximum quality with our advanced conversion algorithms.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🆓</div>
-                    <h3 class="feature-title">Completely Free</h3>
-                    <p class="feature-description">No hidden fees, no subscriptions. Use our tool unlimited times absolutely free.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="ad-space">
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : '83687ca4a249fadc4214f2cdf1428b24',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
-        </div>
-
-        <section class="content-section">
-            <h2>About AdvadApp Image Converter</h2>
-            <p>AdvadApp is a professional-grade online image converter designed to make image format conversion simple, fast, and accessible to everyone. Whether you're a designer, photographer, developer, or casual user, our tool provides the perfect solution for all your image conversion needs.</p>
-
-            <h2 style="margin-top: 30px;">How to Use</h2>
-            <p>1. Click the upload area or drag and drop your image file<br>
-            2. Preview your image to ensure it's the correct file<br>
-            3. Select your desired output format (JPG, PNG, WEBP, or PDF)<br>
-            4. Click "Convert & Download" to instantly convert and save your file<br>
-            5. Your converted image downloads automatically to your device</p>
-
-            <h2 style="margin-top: 30px;">Privacy and Security</h2>
-            <p>At AdvadApp, we take your privacy seriously. All image conversions are performed entirely within your web browser using client-side JavaScript technology. This means your images never get uploaded to our servers or any third-party services. Your files remain completely private and secure on your device throughout the entire conversion process.</p>
         </section>
     </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>AdvadApp</h3>
-                    <p>Your trusted online image converter tool. Fast, free, and secure image conversion for everyone.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#converter">Image Converter</a></li>
-                        <li><a href="#features">Features</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="/privacy-policy" target="_blank">Privacy Policy</a></li>
-                        <li><a href="/terms-and-conditions" target="_blank">Terms and Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AdvadApp. All rights reserved. | Professional Image Conversion Tool</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         const uploadArea = document.getElementById('uploadArea');
@@ -832,4 +511,97 @@
             }
         }
 
-        function
+        async function convertToImage() {
+            return new Promise((resolve, reject) => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const img = new Image();
+
+                img.onload = () => {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+
+                    const mimeType = selectedFormat === 'jpg' ? 'image/jpeg' : 
+                                   selectedFormat === 'png' ? 'image/png' : 'image/webp';
+                    const quality = selectedFormat === 'jpg' ? 0.95 : 0.9;
+
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            downloadFile(blob, `converted.${selectedFormat}`);
+                            resolve();
+                        } else {
+                            reject(new Error('Canvas conversion failed'));
+                        }
+                    }, mimeType, quality);
+                };
+
+                img.onerror = () => reject(new Error('Image loading failed'));
+                img.src = previewImage.src;
+            });
+        }
+
+        async function convertToPDF() {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                
+                img.onload = () => {
+                    try {
+                        const { jsPDF } = window.jspdf;
+                        const imgWidth = img.width;
+                        const imgHeight = img.height;
+                        
+                        const maxWidth = 190;
+                        const maxHeight = 277;
+                        
+                        let pdfWidth = imgWidth;
+                        let pdfHeight = imgHeight;
+                        
+                        if (imgWidth > maxWidth || imgHeight > maxHeight) {
+                            const ratio = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
+                            pdfWidth = imgWidth * ratio;
+                            pdfHeight = imgHeight * ratio;
+                        }
+                        
+                        const pdf = new jsPDF({
+                            orientation: pdfWidth > pdfHeight ? 'landscape' : 'portrait',
+                            unit: 'mm',
+                            format: [pdfWidth, pdfHeight]
+                        });
+                        
+                        pdf.addImage(previewImage.src, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+                        pdf.save('converted.pdf');
+                        resolve();
+                    } catch (error) {
+                        reject(error);
+                    }
+                };
+
+                img.onerror = () => reject(new Error('Image loading failed'));
+                img.src = previewImage.src;
+            });
+        }
+
+        function downloadFile(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function reset() {
+            currentFile = null;
+            fileInput.value = '';
+            previewSection.classList.remove('active');
+            previewImage.src = '';
+            formatBtns.forEach(b => b.classList.remove('active'));
+            formatBtns[0].classList.add('active');
+            selectedFormat = 'jpg';
+        }
+    </script>
+</body>
+</html>
