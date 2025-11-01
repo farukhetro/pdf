@@ -1,77 +1,905 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AdvadApp - Free Online Image Converter</title>
-    <link>https://advadapp.shop</link>
-    <description>Convert your images between JPG, PNG, WEBP, and PDF formats instantly with AdvadApp. Fast, secure, and completely free.</description>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 GMT</lastBuildDate>
-    <atom:link href="https://advadapp.shop/rss.xml" rel="self" type="application/rss+xml" />
-    <image>
-      <url>https://advadapp.shop/favicon.svg</url>
-      <title>AdvadApp</title>
-      <link>https://advadapp.shop</link>
-    </image>
-    
-    <item>
-      <title>Welcome to AdvadApp - Your Free Image Converter</title>
-      <link>https://advadapp.shop</link>
-      <guid>https://advadapp.shop/welcome</guid>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-      <description>
-        AdvadApp is a professional-grade online image converter designed to make image format conversion simple, fast, and accessible to everyone. Convert JPG, PNG, WEBP, and PDF formats instantly without any registration.
-      </description>
-    </item>
-    
-    <item>
-      <title>Lightning Fast Image Conversion</title>
-      <link>https://advadapp.shop#features</link>
-      <guid>https://advadapp.shop/features/fast-conversion</guid>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-      <description>
-        Convert images in seconds with our optimized conversion engine. No waiting, no delays. Experience the fastest image conversion online.
-      </description>
-    </item>
-    
-    <item>
-      <title>100% Secure and Private</title>
-      <link>https://advadapp.shop#features</link>
-      <guid>https://advadapp.shop/features/secure</guid>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-      <description>
-        All conversions happen in your browser. Your images never leave your device. We take your privacy seriously and don't store any of your files.
-      </description>
-    </item>
-    
-    <item>
-      <title>How to Convert Images Online</title>
-      <link>https://advadapp.shop#converter</link>
-      <guid>https://advadapp.shop/guide/how-to-use</guid>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-      <description>
-        Learn how to convert your images in just 4 simple steps: Upload your image, preview it, select your desired format (JPG, PNG, WEBP, or PDF), and download your converted file instantly.
-      </description>
-    </item>
-    
-    <item>
-      <title>Completely Free Image Conversion Tool</title>
-      <link>https://advadapp.shop#features</link>
-      <guid>https://advadapp.shop/features/free</guid>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-      <description>
-        No hidden fees, no subscriptions. Use our tool unlimited times absolutely free. Convert as many images as you need without any cost.
-      </description>
-    </item>
-    
-    <item>
-      <title>High Quality Image Conversion</title>
-      <link>https://advadapp.shop#features</link>
-      <guid>https://advadapp.shop/features/quality</guid>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
-      <description>
-        Maintain maximum quality with our advanced conversion algorithms. Your images remain sharp and clear after conversion.
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AdvadApp - Free online image converter. Convert JPG, PNG, WEBP, and PDF formats instantly. Fast, secure, and no registration required.">
+    <meta name="keywords" content="image converter, jpg to png, png to jpg, webp converter, image to pdf, AdvadApp">
+    <title>AdvadApp - Free Online Image Converter | JPG, PNG, WEBP, PDF</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='80' fill='%23FF0066'>A</text></svg>">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #FF0066 0%, #FF1A75 50%, #FF3385 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 800;
+            color: #FF0066;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF0066;
+        }
+
+        .ad-space {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 1200px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+
+        .feature-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 18px;
+            border-radius: 25px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .share-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .share-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FF0066;
+            margin-bottom: 20px;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn.facebook {
+            background: #1877F2;
+        }
+
+        .share-btn.linkedin {
+            background: #0A66C2;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .share-btn.telegram {
+            background: #0088cc;
+        }
+
+        .share-btn.reddit {
+            background: #FF4500;
+        }
+
+        .converter-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FF0066;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .upload-area {
+            border: 3px dashed #FF0066;
+            border-radius: 15px;
+            padding: 50px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #fff5f9 0%, #ffe8f2 100%);
+        }
+
+        .upload-area:hover {
+            border-color: #cc0052;
+            transform: translateY(-2px);
+        }
+
+        .upload-area.dragover {
+            border-color: #cc0052;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 56px;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            color: #FF0066;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .upload-hint {
+            color: #999;
+            font-size: 13px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .preview-section {
+            display: none;
+            margin-top: 35px;
+        }
+
+        .preview-section.active {
+            display: block;
+        }
+
+        .file-info {
+            background: linear-gradient(135deg, #fff5f9 0%, #ffe8f2 100%);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #FF0066;
+        }
+
+        .file-name {
+            font-weight: 700;
+            color: #FF0066;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 70%;
+        }
+
+        .preview-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .format-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+        }
+
+        .format-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .format-btn {
+            padding: 16px 18px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .format-btn:hover {
+            border-color: #FF0066;
+            color: #FF0066;
+            transform: translateY(-2px);
+        }
+
+        .format-btn.active {
+            background: linear-gradient(135deg, #FF0066, #FF3385);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 20px rgba(255, 0, 102, 0.4);
+        }
+
+        .convert-btn {
+            background: linear-gradient(135deg, #FF0066 0%, #FF3385 100%);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(255, 0, 102, 0.4);
+            text-transform: uppercase;
+        }
+
+        .convert-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 0, 102, 0.5);
+        }
+
+        .convert-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .reset-btn {
+            background: transparent;
+            color: #FF0066;
+            border: 2px solid #FF0066;
+            padding: 14px 35px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: #FF0066;
+            color: white;
+        }
+
+        .loader {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #FF0066;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 15px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader.active {
+            display: block;
+        }
+
+        .features-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #fff5f9 0%, #ffe8f2 100%);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FF0066;
+            margin-bottom: 8px;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #FF0066;
+            margin-bottom: 18px;
+        }
+
+        .content-section p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        footer {
+            background: rgba(255, 0, 102, 0.95);
+            color: white;
+            padding: 45px 20px 25px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-bottom: 35px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 13px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 30px; }
+            .format-selector { grid-template-columns: repeat(2, 1fr); }
+            .nav-links { display: none; }
+            .logo-text { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-container">
+                <div class="logo-text">ADVADAPP</div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#converter">Converter</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="ad-space">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '83687ca4a249fadc4214f2cdf1428b24',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
+    </div>
+
+    <div class="main-wrapper">
+        <section class="hero-section" id="home">
+            <h1>Free Online Image Converter</h1>
+            <p>Convert your images between JPG, PNG, WEBP, and PDF formats instantly with AdvadApp. Fast, secure, and completely free.</p>
+        </section>
+
+        <div class="converter-container" id="converter">
+            <h2 class="section-title">Image Converter</h2>
+            <p class="section-subtitle">Upload your image and select your desired output format</p>
+
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">Click to Upload or Drag & Drop Your Image</div>
+                <div class="upload-hint">Supported: JPG, JPEG, PNG, WEBP | Max 10MB</div>
+                <input type="file" id="fileInput" accept="image/png,image/jpeg,image/jpg,image/webp">
+            </div>
+
+            <div class="preview-section" id="previewSection">
+                <div class="file-info">
+                    <span class="file-name" id="fileName"></span>
+                    <span id="fileSize"></span>
+                </div>
+
+                <div class="preview-container">
+                    <img id="previewImage" class="preview-image" alt="Image preview">
+                </div>
+
+                <div class="controls">
+                    <div class="format-label">Select Output Format:</div>
+                    <div class="format-selector">
+                        <button class="format-btn active" data-format="jpg">JPG</button>
+                        <button class="format-btn" data-format="png">PNG</button>
+                        <button class="format-btn" data-format="webp">WEBP</button>
+                        <button class="format-btn" data-format="pdf">PDF</button>
+                    </div>
+
+                    <div class="loader" id="loader"></div>
+
+                    <button class="convert-btn" id="convertBtn">Convert & Download</button>
+                    <button class="reset-btn" id="resetBtn">Upload New Image</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-space">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '83687ca4a249fadc4214f2cdf1428b24',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
+        </div>
+
+        <section class="features-section" id="features">
+            <h2 class="section-title">Why Choose AdvadApp?</h2>
+            <p class="section-subtitle">The most powerful image converter available online</p>
+            <div class="hero-features">
+                <span class="feature-badge">✓ 100% Free</span>
+                <span class="feature-badge">✓ No Registration</span>
+                <span class="feature-badge">✓ Secure & Private</span>
+                <span class="feature-badge">✓ Instant Results</span>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Convert images in seconds with our optimized conversion engine. No waiting, no delays.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">100% Secure</h3>
+                    <p class="feature-description">All conversions happen in your browser. Your images never leave your device.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3 class="feature-title">High Quality</h3>
+                    <p class="feature-description">Maintain maximum quality with our advanced conversion algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3 class="feature-title">Completely Free</h3>
+                    <p class="feature-description">No hidden fees, no subscriptions. Use our tool unlimited times absolutely free.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-space">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '83687ca4a249fadc4214f2cdf1428b24',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/83687ca4a249fadc4214f2cdf1428b24/invoke.js"></script>
+        </div>
+
+        <section class="content-section">
+            <h2>About AdvadApp Image Converter</h2>
+            <p>AdvadApp is a professional-grade online image converter designed to make image format conversion simple, fast, and accessible to everyone. Whether you're a designer, photographer, developer, or casual user, our tool provides the perfect solution for all your image conversion needs.</p>
+
+            <h2 style="margin-top: 30px;">How to Use</h2>
+            <p>1. Click the upload area or drag and drop your image file<br>
+            2. Preview your image to ensure it's the correct file<br>
+            3. Select your desired output format (JPG, PNG, WEBP, or PDF)<br>
+            4. Click "Convert & Download" to instantly convert and save your file<br>
+            5. Your converted image downloads automatically to your device</p>
+
+            <h2 style="margin-top: 30px;">Privacy and Security</h2>
+            <p>At AdvadApp, we take your privacy seriously. All image conversions are performed entirely within your web browser using client-side JavaScript technology. This means your images never get uploaded to our servers or any third-party services. Your files remain completely private and secure on your device throughout the entire conversion process.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>AdvadApp</h3>
+                    <p>Your trusted online image converter tool. Fast, free, and secure image conversion for everyone.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#converter">Image Converter</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="terms-and-conditions.html" target="_blank">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AdvadApp. All rights reserved. | Professional Image Conversion Tool</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const previewSection = document.getElementById('previewSection');
+        const previewImage = document.getElementById('previewImage');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const formatBtns = document.querySelectorAll('.format-btn');
+        const convertBtn = document.getElementById('convertBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const loader = document.getElementById('loader');
+
+        let currentFile = null;
+        let selectedFormat = 'jpg';
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileSelect);
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        formatBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                formatBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedFormat = btn.dataset.format;
+            });
+        });
+
+        convertBtn.addEventListener('click', convertImage);
+        resetBtn.addEventListener('click', reset);
+
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (file) {
+                handleFile(file);
+            }
+        }
+
+        function handleFile(file) {
+            if (!file.type.match('image.*')) {
+                alert('Please upload a valid image file.');
+                return;
+            }
+
+            if (file.size > 10 * 1024 * 1024) {
+                alert('File size must be less than 10MB.');
+                return;
+            }
+
+            currentFile = file;
+            fileName.textContent = file.name;
+            fileSize.textContent = formatBytes(file.size);
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImage.src = e.target.result;
+                previewSection.classList.add('active');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+        }
+
+        async function convertImage() {
+            if (!currentFile) return;
+
+            loader.classList.add('active');
+            convertBtn.disabled = true;
+
+            try {
+                if (selectedFormat === 'pdf') {
+                    await convertToPDF();
+                } else {
+                    await convertToImage();
+                }
+            } catch (error) {
+                alert('Conversion failed: ' + error.message);
+            } finally {
+                loader.classList.remove('active');
+                convertBtn.disabled = false;
+            }
+        }
+
+        function convertToImage() {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+
+                    const mimeType = `image/${selectedFormat === 'jpg' ? 'jpeg' : selectedFormat}`;
+                    const quality = selectedFormat === 'jpg' ? 0.95 : undefined;
+
+                    canvas.toBlob((blob) => {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        const originalName = currentFile.name.split('.').slice(0, -1).join('.');
+                        a.download = `${originalName || 'converted'}.${selectedFormat}`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        resolve();
+                    }, mimeType, quality);
+                };
+                img.src = previewImage.src;
+            });
+        }
+
+        async function convertToPDF() {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => {
+                    const { jsPDF } = window.jspdf;
+                    
+                    const imgWidth = img.width;
+                    const imgHeight = img.height;
+                    const ratio = imgWidth / imgHeight;
+
+                    let pdfWidth = 210;
+                    let pdfHeight = pdfWidth / ratio;
+
+                    if (pdfHeight > 297) {
+                        pdfHeight = 297;
+                        pdfWidth = pdfHeight * ratio;
+                    }
+
+                    const pdf = new jsPDF({
+                        orientation: ratio > 1 ? 'landscape' : 'portrait',
+                        unit: 'mm',
+                        format: 'a4'
+                    });
+
+                    const x = (pdf.internal.pageSize.getWidth() - pdfWidth) / 2;
+                    const y = (pdf.internal.pageSize.getHeight() - pdfHeight) / 2;
+
+                    pdf.addImage(previewImage.src, 'JPEG', x, y, pdfWidth, pdfHeight);
+                    const originalName = currentFile.name.split('.').slice(0, -1).join('.');
+                    pdf.save(`${originalName || 'converted'}.pdf`);
+                    resolve();
+                };
+                img.src = previewImage.src;
+            });
+        }
+
+        function reset() {
+            currentFile = null;
+            fileInput.value = '';
+            previewSection.classList.remove('active');
+            previewImage.src = '';
+            formatBtns.forEach(b => b.classList.remove('active'));
+            formatBtns[0].classList.add('active');
+            selectedFormat = 'jpg';
+        }
+    </script>
+</body>
+</html>
